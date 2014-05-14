@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<package version="3.0"
+<package version="2.0"
          unique-identifier="pub-id"
          xmlns="http://www.idpf.org/2007/opf">
   <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
@@ -8,23 +8,23 @@
     <dc:title id="t1" xml:lang="fr">Mon premier guide de cuisson, un Mémoire</dc:title>
     <meta refines="#t1" property="title-type">main</meta>
     <meta refines="#t1" property="display-seq">2</meta>
-    
+
     <dc:title id="t2">The Great Cookbooks of the World</dc:title>
     <meta refines="#t2" property="title-type">collection</meta>
     <meta refines="#t2" property="display-seq">1</meta>
-    
+
     <dc:title id="t3">The New French Cuisine Masters</dc:title>
     <meta refines="#t3" property="title-type">collection</meta>
     <meta refines="#t3" property="group-position">2</meta>
     <meta refines="#t3" property="display-seq">3</meta>
-    
+
     <dc:title id="t4">Special Anniversary Edition</dc:title>
     <meta refines="#t4" property="title-type">edition</meta>
     <meta refines="#t4" property="display-seq">4</meta>
-    
-    <dc:title id="t5">The Great Cookbooks of the World: 
-        Mon premier guide de cuisson, un Mémoire. 
-        The New French Cuisine Masters, Volume Two. 
+
+    <dc:title id="t5">The Great Cookbooks of the World:
+        Mon premier guide de cuisson, un Mémoire.
+        The New French Cuisine Masters, Volume Two.
         Special Anniversary Edition</dc:title>
     <meta refines="#t5" property="title-type">extended</meta>
 
@@ -34,7 +34,7 @@
     <dc:creator id="creator01">Lewis Carroll</dc:creator>
     <meta refines="#creator01" property="role" scheme="marc:relators">aut</meta>
     <meta refines="#creator01" property="display-seq">1</meta>
-    
+
     <dc:creator id="creator02">John Tenniel</dc:creator>
     <meta refines="#creator02" property="role" scheme="marc:relators">ill</meta>
     <meta refines="#creator02" property="display-seq">2</meta>

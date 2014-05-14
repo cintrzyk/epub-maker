@@ -6,7 +6,7 @@ module EPUB
       def to_xml(options={:encoding => 'UTF-8'})
         Nokogiri::XML::Builder.new(options) {|xml|
           attrs = {
-            'version'           => '3.0',
+            'version'           => '2.0',
             'xmlns'             => EPUB::NAMESPACES['opf'],
             'unique-identifier' => unique_identifier.id
           }
