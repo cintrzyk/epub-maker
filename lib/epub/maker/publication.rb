@@ -72,6 +72,14 @@ module EPUB
         bindings
       end
 
+      def make_guide
+        self.guide = Guide.new
+        guide.make do
+          yield guide if block_given?
+        end
+        guide
+      end
+
       def save(archive)
         archive.add_buffer book.rootfile_path, to_xml
       end
@@ -331,6 +339,31 @@ module EPUB
               media_type_node = xml.mediaType
               to_xml_attribute media_type_node, media_type, [:media_type]
               media_type_node['handler'] = media_type.handler.id if media_type.handler && media_type.handler.id
+            end
+          }
+        end
+      end
+
+      class Guide
+        include ContentModel
+
+        def make
+          yield self if block_given?
+          self
+        end
+
+        def make_reference
+          reference = Reference.new
+          self << reference
+          yield reference if block_given?
+          reference
+        end
+
+        def to_xml_fragment(xml)
+          xml.guide {
+            references.each do |reference|
+              reference_node = xml.reference
+              to_xml_attribute reference_node, reference, [:reference]
             end
           }
         end
