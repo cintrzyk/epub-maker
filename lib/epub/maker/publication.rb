@@ -363,7 +363,7 @@ module EPUB
           xml.guide_ {
             references.each do |reference|
               reference_node = xml.reference
-              to_xml_attribute reference_node, reference, [:reference]
+              to_xml_attribute reference_node, reference, [:href, :title, :type]
             end
           }
         end
