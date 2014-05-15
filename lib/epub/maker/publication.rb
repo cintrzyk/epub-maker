@@ -20,7 +20,7 @@ module EPUB
             attrs[name] = value
           end
           xml.package_(attrs) do
-            (EPUB::Publication::Package::CONTENT_MODELS - [:bindings, :guide]).each do |model|
+            (EPUB::Publication::Package::CONTENT_MODELS - [:bindings]).each do |model|
               __send__(model).to_xml_fragment xml
             end
             if bindings and !bindings.media_types.empty?
