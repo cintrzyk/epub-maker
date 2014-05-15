@@ -360,7 +360,7 @@ module EPUB
         end
 
         def to_xml_fragment(xml)
-          xml.guide {
+          xml.guide_ {
             references.each do |reference|
               reference_node = xml.reference
               to_xml_attribute reference_node, reference, [:reference]
