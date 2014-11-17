@@ -148,7 +148,7 @@ module EPUB
             links.each do |link|
               node = xml.link
               to_xml_attribute node, link, [:href, :id, :media_type]
-              node['rel'] = link.rel.join(' ') if link.rel
+              node['rel'] = link.rel.to_a.join(' ') if link.rel.any?
               node['refines'] = "##{link.refines.id}" if link.refines
             end
           }
@@ -235,7 +235,7 @@ module EPUB
             items.each do |item|
               item_node = xml.item_
               to_xml_attribute item_node, item, [:id, :href, :media_type, :media_overlay]
-              item_node['properties'] = item.properties.join(' ') unless item.properties.empty?
+              item_node['properties'] = item.properties.to_a.join(' ') unless item.properties.empty?
               item_node['fallback'] = item.fallback.id if item.fallback
             end
           }
@@ -311,7 +311,7 @@ module EPUB
               itemref_node = xml.itemref
               to_xml_attribute itemref_node, itemref, [:idref, :id]
               itemref_node['linear'] = 'no' unless itemref.linear?
-              itemref_node['properties'] = itemref.properties.join(' ') unless itemref.properties.empty?
+              itemref_node['properties'] = itemref.properties.to_a.join(' ') unless itemref.properties.empty?
             end
           }
           to_xml_attribute node, self, [:id, :toc, :page_progression_direction]
